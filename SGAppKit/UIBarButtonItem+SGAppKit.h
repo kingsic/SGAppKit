@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return 创建完的 item
  */
-+ (UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action image:(NSString *)image highImage:(NSString *)highImage;
++ (UIBarButtonItem *)SG_itemWithTarget:(id)target action:(SEL)action image:(NSString *)image highImage:(NSString *)highImage;
 
 /**
  *  返回纯字体的 UIBarButtonItem
@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return 创建完的 item
  */
-+ (UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action title:(NSString *)title titleColor:(UIColor *)titleColor titleFond:(UIFont *)titleFond;
++ (UIBarButtonItem *)SG_itemWithTarget:(id)target action:(SEL)action title:(NSString *)title titleColor:(UIColor *)titleColor titleFond:(UIFont *)titleFond;
 
 @end
 

@@ -10,7 +10,7 @@
 
 @implementation UIBarButtonItem (SGAppKit)
 //／ 返回带图片的 UIBarButtonItem
-+ (UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action image:(NSString *)image highImage:(NSString *)highImage{
++ (UIBarButtonItem *)SG_itemWithTarget:(id)target action:(SEL)action image:(NSString *)image highImage:(NSString *)highImage{
     UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
     // 设置图片
     [button setBackgroundImage:[UIImage imageNamed:image] forState:(UIControlStateNormal)];
@@ -23,7 +23,7 @@
 }
 
 //／ 返回纯字体的 UIBarButtonItem
-+ (UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action title:(NSString *)title titleColor:(UIColor *)titleColor titleFond:(UIFont *)titleFond {
++ (UIBarButtonItem *)SG_itemWithTarget:(id)target action:(SEL)action title:(NSString *)title titleColor:(UIColor *)titleColor titleFond:(UIFont *)titleFond {
     UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
     [button setTitle:title forState:(UIControlStateNormal)];
     [button setTitleColor:titleColor forState:(UIControlStateNormal)];
