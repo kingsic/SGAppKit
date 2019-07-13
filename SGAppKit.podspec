@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
     s.name         = 'SGAppKit'
-    s.version      = '0.0.1'
-    s.summary      = 'category of UIKit'
+    s.version      = '0.0.2'
+    s.summary      = 'category'
     s.homepage     = 'https://github.com/kingsic/SGAppKit'
     s.license      = 'MIT'
     s.authors      = {'kingsic' => 'kingsic@126.com'}

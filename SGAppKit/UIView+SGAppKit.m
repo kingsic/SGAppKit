@@ -114,7 +114,7 @@
     return nil;
 }
 /// 给视图添加 UITapGestureRecognizer 手势
-- (void)SG_addTapGestureWithTarget:(id)target action:(SEL)action {
+- (void)SG_addTapGestureRecognizerWithTarget:(id)target action:(SEL)action {
     self.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:target action:action];
     [self addGestureRecognizer:tap];

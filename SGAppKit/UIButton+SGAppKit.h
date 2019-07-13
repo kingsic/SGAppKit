@@ -24,8 +24,6 @@ typedef enum : NSUInteger {
 typedef void(^SGCountdownCompletionBlock)(void);
 
 @interface UIButton (SGAppKit)
-/// 事件点击时间间隔
-@property (nonatomic, assign) NSTimeInterval SG_timeInterval;
 
 /** 倒计时，s倒计 */
 - (void)SG_countdownWithSec:(NSInteger)time;

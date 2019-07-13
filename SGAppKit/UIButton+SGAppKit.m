@@ -9,68 +9,7 @@
 #import "UIButton+SGAppKit.h"
 #import <objc/runtime.h>
 
-@interface UIButton ()
-/// 点击时间间隔
-@property (nonatomic, assign) NSTimeInterval temp_timeInterval;
-@end
-
 @implementation UIButton (SGAppKit)
-/// 加载这个分类的时候调用
-+ (void)load {
-    // class_getInstanceMethod: 获取对象
-    Method systemMethod = class_getInstanceMethod(self, @selector(sendAction:to:forEvent:));
-    SEL sysSEL = @selector(sendAction:to:forEvent:);
-    
-    // custom
-    Method SGMethod = class_getInstanceMethod(self, @selector(SG_sendAction:to:forEvent:));
-    SEL SGSEL = @selector(SG_sendAction:to:forEvent:);
-    
-    // 添加方法
-    // 语法：BOOL class_addMethod(Class cls, SEL name, IMP imp, const char *types) 若添加成功则返回YES
-    // cls：被添加方法的类
-    // name：被添加方法的方法名
-    // imp：被添加方法的实现函数
-    // types：被添加方法的实现函数的返回值类型和参数类型的字符串
-    BOOL addMethod = class_addMethod(self, SGSEL, method_getImplementation(SGMethod), method_getTypeEncoding(SGMethod));
-    // 如果系统中该方法已经存在了，则替换系统的方法; 语法：IMP class_replaceMethod(Class cls, SEL name, IMP imp,const char *types)
-    if (addMethod) {
-        class_replaceMethod(self, sysSEL, method_getImplementation(systemMethod), method_getTypeEncoding(systemMethod));
-    } else {
-        method_exchangeImplementations(systemMethod, SGMethod);
-    }
-}
-
-- (void)SG_sendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event {
-    // 是否小于设定的时间间隔
-    BOOL needSendAction = (NSDate.date.timeIntervalSince1970 - self.temp_timeInterval >= self.SG_timeInterval);
-    
-    // 更新上一次点击时间戳
-    if (self.SG_timeInterval > 0) {
-        self.temp_timeInterval = NSDate.date.timeIntervalSince1970;
-    }
-    
-    // 两次点击的时间间隔小于设定的时间间隔时，才执行响应事件
-    if (needSendAction) {
-        [self SG_sendAction:action to:target forEvent:event];
-    }
-}
-
-#pragma mark - - - set、get
-- (void)setSG_timeInterval:(NSTimeInterval)SG_timeInterval {
-    objc_setAssociatedObject(self, "UIButton_SG_timeInterval", @(SG_timeInterval), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-- (NSTimeInterval)SG_timeInterval {
-    return [objc_getAssociatedObject(self, "UIButton_SG_timeInterval") doubleValue];
-}
-
-- (void)setTemp_timeInterval:(NSTimeInterval)temp_timeInterval {
-    objc_setAssociatedObject(self, "UIButton_temp_timeInterval", @(temp_timeInterval), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-- (NSTimeInterval)temp_timeInterval {
-    return [objc_getAssociatedObject(self, "UIButton_temp_timeInterval") doubleValue];
-}
-
-
 /** 倒计时，s倒计 */
 - (void)SG_countdownWithSec:(NSInteger)sec {
     __block NSInteger tempSecond = sec;
@@ -165,6 +104,7 @@
 }
 
 
+#pragma mark - - - 设置图片与文字样式
 /**
  *  设置图片与文字样式
  *

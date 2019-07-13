@@ -22,12 +22,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGFloat SG_top;
 @property (nonatomic, assign) CGFloat SG_bottom;
 
-/// 从 XIB 中加载视图
+/** 从 XIB 中加载视图 */
 + (instancetype)SG_loadViewFromXib;
-/// 获取当前视图所在的控制器
+/** 获取当前视图所在的控制器 */
 - (UIViewController *)SG_getViewController;
-/// 给视图添加 UITapGestureRecognizer 手势
-- (void)SG_addTapGestureWithTarget:(id)target action:(SEL)action;
+/** 给视图添加 UITapGestureRecognizer 手势 */
+- (void)SG_addTapGestureRecognizerWithTarget:(id)target action:(SEL)action;
 
 @end
 

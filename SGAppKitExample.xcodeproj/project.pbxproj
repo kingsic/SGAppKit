@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D1D333B22D903E8004BB29A /* UIViewController+SGAppKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1D333A22D903E8004BB29A /* UIViewController+SGAppKit.m */; };
+		8D1D33A122DA300E004BB29A /* NSString+SGAppKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1D33A022DA300E004BB29A /* NSString+SGAppKit.m */; };
 		8D22340C229E200200E0204F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D22340B229E200200E0204F /* AppDelegate.m */; };
 		8D22340F229E200200E0204F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D22340E229E200200E0204F /* ViewController.m */; };
 		8D223412229E200200E0204F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D223410229E200200E0204F /* Main.storyboard */; };
@@ -41,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D1D333922D903E8004BB29A /* UIViewController+SGAppKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SGAppKit.h"; sourceTree = "<group>"; };
+		8D1D333A22D903E8004BB29A /* UIViewController+SGAppKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SGAppKit.m"; sourceTree = "<group>"; };
+		8D1D339F22DA300E004BB29A /* NSString+SGAppKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SGAppKit.h"; sourceTree = "<group>"; };
+		8D1D33A022DA300E004BB29A /* NSString+SGAppKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+SGAppKit.m"; sourceTree = "<group>"; };
 		8D223407229E200200E0204F /* SGAppKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGAppKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D22340A229E200200E0204F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8D22340B229E200200E0204F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -156,6 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				8D43DBC022A21FFF005CF834 /* SGAppKit.h */,
+				8D1D339F22DA300E004BB29A /* NSString+SGAppKit.h */,
+				8D1D33A022DA300E004BB29A /* NSString+SGAppKit.m */,
 				8D43DBB122A215BC005CF834 /* UIBarButtonItem+SGAppKit.h */,
 				8D43DBB222A215BC005CF834 /* UIBarButtonItem+SGAppKit.m */,
 				8D43DBB422A215D0005CF834 /* UIButton+SGAppKit.h */,
@@ -168,6 +176,8 @@
 				8D43DBAF22A2158D005CF834 /* UITextView+SGAppKit.m */,
 				8D43DBBA22A21604005CF834 /* UIView+SGAppKit.h */,
 				8D43DBBB22A21604005CF834 /* UIView+SGAppKit.m */,
+				8D1D333922D903E8004BB29A /* UIViewController+SGAppKit.h */,
+				8D1D333A22D903E8004BB29A /* UIViewController+SGAppKit.m */,
 			);
 			path = SGAppKit;
 			sourceTree = "<group>";
@@ -303,12 +313,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D43DBB922A215F0005CF834 /* UITextField+SGAppKit.m in Sources */,
+				8D1D33A122DA300E004BB29A /* NSString+SGAppKit.m in Sources */,
 				8D43DBB622A215D0005CF834 /* UIButton+SGAppKit.m in Sources */,
 				8D43DBB022A2158D005CF834 /* UITextView+SGAppKit.m in Sources */,
 				8D43DBBC22A21604005CF834 /* UIView+SGAppKit.m in Sources */,
 				8D43DBB322A215BC005CF834 /* UIBarButtonItem+SGAppKit.m in Sources */,
 				8D22340F229E200200E0204F /* ViewController.m in Sources */,
 				8D22341A229E200600E0204F /* main.m in Sources */,
+				8D1D333B22D903E8004BB29A /* UIViewController+SGAppKit.m in Sources */,
 				8D22340C229E200200E0204F /* AppDelegate.m in Sources */,
 				8D43DBBF22A21662005CF834 /* UIColor+SGAppKit.m in Sources */,
 			);
