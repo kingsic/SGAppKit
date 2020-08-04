@@ -10,10 +10,14 @@
 
 @implementation UIViewController (SGAppKit)
 /** 返回到指定控制器 */
-- (void)SG_popToViewControllerName:(NSString *)viewControllerName {
+- (void)SG_popToViewController:(Class)aClass {
+    [self SG_popToViewController:aClass animated:YES];
+}
+/** 返回到指定控制器 */
+- (void)SG_popToViewController:(Class)aClass animated:(BOOL)animated {
     for (UIViewController *vc in self.navigationController.viewControllers) {
-        if ([vc isKindOfClass:[NSClassFromString(viewControllerName) class] ]) {
-            [self.navigationController popToViewController:vc animated:YES];
+        if ([vc isKindOfClass:aClass]) {
+            [self.navigationController popToViewController:vc animated:animated];
         }
     }
 }

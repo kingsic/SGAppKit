@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+typedef void(^UITapActionBlock)(void);
 
 @interface UIView (SGAppKit)
 @property (nonatomic, assign) CGFloat SG_x;
@@ -23,11 +24,24 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGFloat SG_bottom;
 
 /** 从 XIB 中加载视图 */
-+ (instancetype)SG_loadViewFromXib;
++ (instancetype)SG_loadFromXib;
+
+/** 将视图添加到 KeyWindow 上 */
+- (void)SG_addToKeyWindow;
+
+/** 移除视图上的所有子视图 */
+- (void)SG_removeAllSubviews;
+/** 移除视图上指定成员子视图 */
+- (void)SG_removeAllSubviewsIsMemberOfClass:(Class)aClass;
+
 /** 获取当前视图所在的控制器 */
-- (UIViewController *)SG_getViewController;
+- (UIViewController *)SG_getController;
+
 /** 给视图添加 UITapGestureRecognizer 手势 */
-- (void)SG_addTapGestureRecognizerWithTarget:(id)target action:(SEL)action;
+- (void)SG_addTapActionWithBlock:(UITapActionBlock)block;
+
+/** 给视图画条虚线 */
+- (void)SG_drawDottedLineWithStartPoint:(CGPoint)point color:(UIColor *)color width:(CGFloat)width length:(NSNumber *)length space:(NSNumber *)space size:(CGSize)size;
 
 @end
 

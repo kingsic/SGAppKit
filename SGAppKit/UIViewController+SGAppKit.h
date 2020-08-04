@@ -12,7 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (SGAppKit)
 /** 返回到指定控制器 */
-- (void)SG_popToViewControllerName:(NSString *)viewControllerName;
+- (void)SG_popToViewController:(Class)aClass;
+/** 返回到指定控制器 */
+- (void)SG_popToViewController:(Class)aClass animated:(BOOL)animated;
 
 @end
 

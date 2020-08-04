@@ -9,6 +9,11 @@
 #import "NSString+SGAppKit.h"
 
 @implementation NSString (SGAppKit)
+/** 判断字符串是否为空 */
+- (BOOL)SG_isEmpty {
+    return (([self isKindOfClass:[NSNull class]]) || [self isEqual:[NSNull null]] || (self.length == 0) || (self == nil) || ([self isEqualToString:@"(null)"]) || ([self isEqualToString:@"<null>"]));
+}
+
 /** 判断是否是手机号码 */
 - (BOOL)SG_isPhoneNumber {
     NSString *tempStr = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
@@ -26,11 +31,29 @@
         }
     }
 }
-/** 判断字符串是否为空 */
-- (BOOL)SG_isEmpty {
-    return (([self isKindOfClass:[NSNull class]]) || [self isEqual:[NSNull null]] || (self.length == 0) || (self == nil) || ([self isEqualToString:@"(null)"]) || ([self isEqualToString:@"<null>"]));
+
+/**
+ *  根据字号计算出字符串的宽
+ *
+ *  @param font      字体字号
+ */
+- (CGFloat)SG_calculatesStringWidthWithFont:(UIFont *)font {
+    NSDictionary *attrs = @{NSFontAttributeName : font};
+    return [self boundingRectWithSize:CGSizeMake(0, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size.width;
 }
 
+/**
+ *  设置文本上下间距
+ *
+ *  @param space      上下文本之间的间距
+*/
+- (NSMutableAttributedString *)SG_setSpaceBetweenText:(CGFloat)space {
+    NSMutableAttributedString *attributedStr = [[NSMutableAttributedString alloc] initWithString:self];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:space];
+    [attributedStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [self length])];
+    return attributedStr;
+}
 /**
  *  设置特定文字相关属性
  *

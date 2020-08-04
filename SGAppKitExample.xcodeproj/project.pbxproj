@@ -23,6 +23,8 @@
 		8D43DBB922A215F0005CF834 /* UITextField+SGAppKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D43DBB822A215F0005CF834 /* UITextField+SGAppKit.m */; };
 		8D43DBBC22A21604005CF834 /* UIView+SGAppKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D43DBBB22A21604005CF834 /* UIView+SGAppKit.m */; };
 		8D43DBBF22A21662005CF834 /* UIColor+SGAppKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D43DBBE22A21661005CF834 /* UIColor+SGAppKit.m */; };
+		8D69819E24D9937E00D9447C /* UIControl+SGAppKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D69819D24D9937E00D9447C /* UIControl+SGAppKit.m */; };
+		8D6981A124D993A900D9447C /* UITableView+SGAppKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D69819F24D993A900D9447C /* UITableView+SGAppKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,10 @@
 		8D43DBBD22A21661005CF834 /* UIColor+SGAppKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+SGAppKit.h"; sourceTree = "<group>"; };
 		8D43DBBE22A21661005CF834 /* UIColor+SGAppKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SGAppKit.m"; sourceTree = "<group>"; };
 		8D43DBC022A21FFF005CF834 /* SGAppKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGAppKit.h; sourceTree = "<group>"; };
+		8D69819C24D9937E00D9447C /* UIControl+SGAppKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+SGAppKit.h"; sourceTree = "<group>"; };
+		8D69819D24D9937E00D9447C /* UIControl+SGAppKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+SGAppKit.m"; sourceTree = "<group>"; };
+		8D69819F24D993A900D9447C /* UITableView+SGAppKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SGAppKit.m"; sourceTree = "<group>"; };
+		8D6981A024D993A900D9447C /* UITableView+SGAppKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SGAppKit.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +176,10 @@
 				8D43DBB522A215D0005CF834 /* UIButton+SGAppKit.m */,
 				8D43DBBD22A21661005CF834 /* UIColor+SGAppKit.h */,
 				8D43DBBE22A21661005CF834 /* UIColor+SGAppKit.m */,
+				8D69819C24D9937E00D9447C /* UIControl+SGAppKit.h */,
+				8D69819D24D9937E00D9447C /* UIControl+SGAppKit.m */,
+				8D6981A024D993A900D9447C /* UITableView+SGAppKit.h */,
+				8D69819F24D993A900D9447C /* UITableView+SGAppKit.m */,
 				8D43DBB722A215F0005CF834 /* UITextField+SGAppKit.h */,
 				8D43DBB822A215F0005CF834 /* UITextField+SGAppKit.m */,
 				8D43DBAE22A2158D005CF834 /* UITextView+SGAppKit.h */,
@@ -312,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D69819E24D9937E00D9447C /* UIControl+SGAppKit.m in Sources */,
 				8D43DBB922A215F0005CF834 /* UITextField+SGAppKit.m in Sources */,
 				8D1D33A122DA300E004BB29A /* NSString+SGAppKit.m in Sources */,
 				8D43DBB622A215D0005CF834 /* UIButton+SGAppKit.m in Sources */,
@@ -321,6 +332,7 @@
 				8D22340F229E200200E0204F /* ViewController.m in Sources */,
 				8D22341A229E200600E0204F /* main.m in Sources */,
 				8D1D333B22D903E8004BB29A /* UIViewController+SGAppKit.m in Sources */,
+				8D6981A124D993A900D9447C /* UITableView+SGAppKit.m in Sources */,
 				8D22340C229E200200E0204F /* AppDelegate.m in Sources */,
 				8D43DBBF22A21662005CF834 /* UIColor+SGAppKit.m in Sources */,
 			);
