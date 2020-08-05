@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UITextField (SGAppKit)
 /** 占位文字颜色 */
-@property (nonatomic, strong) UIColor *SG_placeholderColor;
+- (void)SG_setPlaceholderColor:(UIColor *)color;
 
 @end
 

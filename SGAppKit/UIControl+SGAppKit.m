@@ -9,8 +9,8 @@
 #import "UIControl+SGAppKit.h"
 #import <objc/runtime.h>
  
-static char *const SG_timeIntervalKey = "SG_timeIntervalKey";
-static char *const isEventInvalidKey = "isEventInvalidKey";
+static char kSG_timeIntervalKey;
+static char kIsEventInvalidKey;
 
 @interface UIControl ()
 @property(nonatomic, assign) BOOL isEventInvalid;
@@ -33,16 +33,16 @@ static char *const isEventInvalidKey = "isEventInvalidKey";
 }
 
 - (NSTimeInterval)SG_timeInterval {
-    return [objc_getAssociatedObject(self, SG_timeIntervalKey) doubleValue];
+    return [objc_getAssociatedObject(self, &kSG_timeIntervalKey) doubleValue];
 }
 - (void)setSG_timeInterval:(NSTimeInterval)SG_timeInterval {
-    objc_setAssociatedObject(self, SG_timeIntervalKey, @(SG_timeInterval), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &kSG_timeIntervalKey, @(SG_timeInterval), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 - (BOOL)isEventInvalid {
-    return [objc_getAssociatedObject(self, isEventInvalidKey) boolValue];
+    return [objc_getAssociatedObject(self, &kIsEventInvalidKey) boolValue];
 }
 -(void)setIsEventInvalid:(BOOL)isEventInvalid {
-    objc_setAssociatedObject(self, isEventInvalidKey, @(isEventInvalid), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &kIsEventInvalidKey, @(isEventInvalid), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

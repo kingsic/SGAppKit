@@ -24,7 +24,7 @@ typedef void(^UITapActionBlock)(void);
 @property (nonatomic, assign) CGFloat SG_bottom;
 
 /** 从 XIB 中加载视图 */
-+ (instancetype)SG_loadFromXib;
++ (UIView *)SG_loadFromXib;
 
 /** 将视图添加到 KeyWindow 上 */
 - (void)SG_addToKeyWindow;
@@ -39,6 +39,12 @@ typedef void(^UITapActionBlock)(void);
 
 /** 给视图添加 UITapGestureRecognizer 手势 */
 - (void)SG_addTapActionWithBlock:(UITapActionBlock)block;
+
+/** 给视图设置圆角 */
+- (void)SG_setCornerRadius:(CGFloat)cornerRadius rectCorner:(UIRectCorner)rectCorner;
+
+/** 给视图设置阴影效果 */
+- (void)SG_setLayerShadowColor:(UIColor*)color offset:(CGSize)offset radius:(CGFloat)radius;
 
 /** 给视图画条虚线 */
 - (void)SG_drawDottedLineWithStartPoint:(CGPoint)point color:(UIColor *)color width:(CGFloat)width length:(NSNumber *)length space:(NSNumber *)space size:(CGSize)size;

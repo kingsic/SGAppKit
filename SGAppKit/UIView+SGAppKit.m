@@ -9,8 +9,8 @@
 #import "UIView+SGAppKit.h"
 #import <objc/runtime.h>
 
-static char SGActionHandlerTapGestureKey;
-static char SGActionHandlerTapBlockKey;
+static char kSGActionHandlerTapGestureKey;
+static char kSGActionHandlerTapBlockKey;
 
 @implementation UIView (SGAppKit)
 - (void)setSG_x:(CGFloat)SG_x {
@@ -106,13 +106,13 @@ static char SGActionHandlerTapBlockKey;
 
 #pragma mark - - method
 /// 从 XIB 中加载视图
-+ (instancetype)SG_loadFromXib {
++ (UIView *)SG_loadFromXib {
     return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].lastObject;
 }
 
 /// 将视图添加到 KeyWindow 上
 - (void)SG_addToKeyWindow {
-    [[[UIApplication sharedApplication] keyWindow] addSubview:self];
+    [[[[UIApplication sharedApplication] windows] firstObject] addSubview:self];
 }
 
 /// 移除视图上的所有子视图
@@ -144,21 +144,51 @@ static char SGActionHandlerTapBlockKey;
 /// 给视图添加 UITapGestureRecognizer 手势
 - (void)SG_addTapActionWithBlock:(UITapActionBlock)block {
     self.userInteractionEnabled = YES;
-    UITapGestureRecognizer *gesture = objc_getAssociatedObject(self, &SGActionHandlerTapGestureKey);
+    UITapGestureRecognizer *gesture = objc_getAssociatedObject(self, &kSGActionHandlerTapGestureKey);
     if (!gesture) {
         gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleActionForTapGesture:)];
         [self addGestureRecognizer:gesture];
-        objc_setAssociatedObject(self, &SGActionHandlerTapGestureKey, gesture, OBJC_ASSOCIATION_RETAIN);
+        objc_setAssociatedObject(self, &kSGActionHandlerTapGestureKey, gesture, OBJC_ASSOCIATION_RETAIN);
     }
-    objc_setAssociatedObject(self, &SGActionHandlerTapBlockKey, block, OBJC_ASSOCIATION_COPY);
+    objc_setAssociatedObject(self, &kSGActionHandlerTapBlockKey, block, OBJC_ASSOCIATION_COPY);
 }
 - (void)handleActionForTapGesture:(UITapGestureRecognizer *)gesture {
     if (gesture.state == UIGestureRecognizerStateRecognized) {
-        UITapActionBlock block = objc_getAssociatedObject(self, &SGActionHandlerTapBlockKey);
+        UITapActionBlock block = objc_getAssociatedObject(self, &kSGActionHandlerTapBlockKey);
         if (block) {
             block();
         }
     }
+}
+
+/**
+ *  给视图设置圆角
+ *
+ *  @param cornerRadius        圆角大小
+ *  @param rectCorner          圆角的方向
+ */
+- (void)SG_setCornerRadius:(CGFloat)cornerRadius rectCorner:(UIRectCorner)rectCorner {
+    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:rectCorner cornerRadii:CGSizeMake(cornerRadius,cornerRadius)];
+    CAShapeLayer *shapeLayer = [[CAShapeLayer alloc] init];
+    shapeLayer.frame = self.bounds;
+    shapeLayer.path = bezierPath.CGPath;
+    self.layer.mask = shapeLayer;
+}
+
+/**
+ *  给视图设置阴影效果
+ *
+ *  @param color           阴影颜色
+ *  @param offset          阴影偏移量
+ *  @param radius          阴影圆角
+ */
+- (void)SG_setLayerShadowColor:(UIColor*)color offset:(CGSize)offset radius:(CGFloat)radius {
+    self.layer.shadowColor = color.CGColor;
+    self.layer.shadowOffset = offset;
+    self.layer.shadowRadius = radius;
+    self.layer.shadowOpacity = 1;
+    self.layer.shouldRasterize = YES;
+    self.layer.rasterizationScale = [UIScreen mainScreen].scale;
 }
 
 /**

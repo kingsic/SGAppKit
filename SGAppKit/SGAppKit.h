@@ -1,6 +1,6 @@
 //
 //  SGAppKit.h
-//  Version 0.0.5
+//  Version 0.1.0
 //  GitHub：https://github.com/kingsic/SGAppKit
 //
 //  Created by kingsic on 2019/6/1.
@@ -13,8 +13,8 @@
 #import "UIButton+SGAppKit.h"
 #import "UIColor+SGAppKit.h"
 #import "UIControl+SGAppKit.h"
+#import "UIImage+SGAppKit.h"
 #import "UITableView+SGAppKit.h"
 #import "UITextField+SGAppKit.h"
-#import "UITextView+SGAppKit.h"
 #import "UIView+SGAppKit.h"
 #import "UIViewController+SGAppKit.h"
