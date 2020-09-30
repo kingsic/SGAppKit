@@ -1,12 +1,13 @@
 //
 //  SGAppKit.h
-//  Version 0.1.0
+//  Version 0.1.5
 //  GitHub：https://github.com/kingsic/SGAppKit
 //
 //  Created by kingsic on 2019/6/1.
 //  Copyright © 2019年 kingsic. All rights reserved.
 //
 
+#import "NSMutableAttributedString+SGAppKit.h"
 #import "NSString+SGAppKit.h"
 
 #import "UIBarButtonItem+SGAppKit.h"

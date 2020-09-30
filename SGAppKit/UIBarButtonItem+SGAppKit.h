@@ -30,11 +30,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param action       点击 item 后调用 target 的哪个方法
  *  @param title        标题
  *  @param titleColor   标题颜色
- *  @param titleFond    标题字号
+ *  @param titleFont    标题字号
  *
  *  @return 创建完的 item
  */
-+ (UIBarButtonItem *)SG_itemWithTarget:(id)target action:(SEL)action title:(NSString *)title titleColor:(UIColor *)titleColor titleFond:(UIFont *)titleFond;
++ (UIBarButtonItem *)SG_itemWithTarget:(id)target action:(SEL)action title:(NSString *)title titleColor:(UIColor *)titleColor titleFont:(UIFont *)titleFont;
 
 @end
 

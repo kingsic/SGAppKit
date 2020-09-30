@@ -25,6 +25,7 @@
 		8D6981BF24DAFAE200D9447C /* UITextField+SGAppKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6981B124DAFAE200D9447C /* UITextField+SGAppKit.m */; };
 		8D6981C024DAFAE200D9447C /* UIViewController+SGAppKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6981B324DAFAE200D9447C /* UIViewController+SGAppKit.m */; };
 		8D6981C124DAFAE200D9447C /* NSString+SGAppKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6981B724DAFAE200D9447C /* NSString+SGAppKit.m */; };
+		8D76D855251CD78F00AAD123 /* NSMutableAttributedString+SGAppKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D76D854251CD78F00AAD123 /* NSMutableAttributedString+SGAppKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		8D6981B524DAFAE200D9447C /* UITableView+SGAppKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SGAppKit.h"; sourceTree = "<group>"; };
 		8D6981B624DAFAE200D9447C /* SGAppKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAppKit.h; sourceTree = "<group>"; };
 		8D6981B724DAFAE200D9447C /* NSString+SGAppKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SGAppKit.m"; sourceTree = "<group>"; };
+		8D76D853251CD78F00AAD123 /* NSMutableAttributedString+SGAppKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+SGAppKit.h"; sourceTree = "<group>"; };
+		8D76D854251CD78F00AAD123 /* NSMutableAttributedString+SGAppKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+SGAppKit.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,8 @@
 				8D6981B624DAFAE200D9447C /* SGAppKit.h */,
 				8D6981AC24DAFAE200D9447C /* NSString+SGAppKit.h */,
 				8D6981B724DAFAE200D9447C /* NSString+SGAppKit.m */,
+				8D76D853251CD78F00AAD123 /* NSMutableAttributedString+SGAppKit.h */,
+				8D76D854251CD78F00AAD123 /* NSMutableAttributedString+SGAppKit.m */,
 				8D6981AD24DAFAE200D9447C /* UIBarButtonItem+SGAppKit.h */,
 				8D6981A324DAFAE200D9447C /* UIBarButtonItem+SGAppKit.m */,
 				8D6981B224DAFAE200D9447C /* UIButton+SGAppKit.h */,
@@ -329,6 +334,7 @@
 				8D6981BE24DAFAE200D9447C /* UIColor+SGAppKit.m in Sources */,
 				8D6981B824DAFAE200D9447C /* UIBarButtonItem+SGAppKit.m in Sources */,
 				8D22341A229E200600E0204F /* main.m in Sources */,
+				8D76D855251CD78F00AAD123 /* NSMutableAttributedString+SGAppKit.m in Sources */,
 				8D6981BB24DAFAE200D9447C /* UIControl+SGAppKit.m in Sources */,
 				8D6981C124DAFAE200D9447C /* NSString+SGAppKit.m in Sources */,
 				8D6981BD24DAFAE200D9447C /* UIImage+SGAppKit.m in Sources */,

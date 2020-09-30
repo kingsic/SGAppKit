@@ -33,39 +33,23 @@
 }
 
 /**
- *  根据字号计算出字符串的宽
+ *  根据字号大小计算出字符串的宽
  *
- *  @param font      字体字号
+ *  @param font      文字字号
  */
-- (CGFloat)SG_calculatesStringWidthWithFont:(UIFont *)font {
-    NSDictionary *attrs = @{NSFontAttributeName : font};
-    return [self boundingRectWithSize:CGSizeMake(0, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size.width;
-}
-
-/**
- *  设置文本上下间距
- *
- *  @param space      上下文本之间的间距
-*/
-- (NSMutableAttributedString *)SG_setSpaceBetweenText:(CGFloat)space {
-    NSMutableAttributedString *attributedStr = [[NSMutableAttributedString alloc] initWithString:self];
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setLineSpacing:space];
-    [attributedStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [self length])];
-    return attributedStr;
+- (CGFloat)SG_calculateStringWidthWithFont:(UIFont *)font {
+    NSDictionary *attributedStr = @{NSFontAttributeName : font};
+    return [self boundingRectWithSize:CGSizeMake(0, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributedStr context:nil].size.width;
 }
 /**
- *  设置特定文字相关属性
+ *  根据字号大小及宽度计算出字符串的高
  *
- *  @param color      颜色
- *  @param font       字体字号
- *  @param range      字体位置
+ *  @param font         文字字号
+ *  @param width        限制的宽度
  */
-- (NSMutableAttributedString *)SG_color:(UIColor *)color font:(UIFont *)font range:(NSRange)range {
-    NSMutableAttributedString *attriStr = [[NSMutableAttributedString alloc] initWithString:self];
-    [attriStr addAttribute:NSForegroundColorAttributeName value:color range:range];
-    [attriStr addAttribute:NSFontAttributeName value:font range:range];
-    return attriStr;
+- (CGFloat)SG_calculateStringHeightWithFont:(UIFont *)font width:(CGFloat)width {
+    NSDictionary *attributedStr = @{NSFontAttributeName : font};
+    return [self boundingRectWithSize:CGSizeMake(width, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributedStr context:nil].size.height;
 }
 
 @end

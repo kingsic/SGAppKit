@@ -40,11 +40,16 @@ typedef void(^UITapActionBlock)(void);
 /** 给视图添加 UITapGestureRecognizer 手势 */
 - (void)SG_addTapActionWithBlock:(UITapActionBlock)block;
 
-/** 给视图设置圆角 */
-- (void)SG_setCornerRadius:(CGFloat)cornerRadius rectCorner:(UIRectCorner)rectCorner;
+/** 给视图添加圆角 */
+- (void)SG_addCornerRadius:(CGFloat)cornerRadius;
+/** 给视图添加圆角 */
+- (void)SG_addCornerRadius:(CGFloat)cornerRadius rectCorner:(UIRectCorner)rectCorner;
 
-/** 给视图设置阴影效果 */
-- (void)SG_setLayerShadowColor:(UIColor*)color offset:(CGSize)offset radius:(CGFloat)radius;
+/** 给视图添加边框及边框颜色 */
+- (void)SG_addBorderWidth:(CGFloat)width color:(UIColor *)color;
+
+/** 给视图添加阴影效果 */
+- (void)SG_addLayerShadowColor:(UIColor*)color offset:(CGSize)offset radius:(CGFloat)radius;
 
 /** 给视图画条虚线 */
 - (void)SG_drawDottedLineWithStartPoint:(CGPoint)point color:(UIColor *)color width:(CGFloat)width length:(NSNumber *)length space:(NSNumber *)space size:(CGSize)size;

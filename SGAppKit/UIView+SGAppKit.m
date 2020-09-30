@@ -161,13 +161,18 @@ static char kSGActionHandlerTapBlockKey;
     }
 }
 
+/** 给视图添加圆角 */
+- (void)SG_addCornerRadius:(CGFloat)cornerRadius {
+    self.layer.cornerRadius = cornerRadius;
+    self.layer.masksToBounds = YES;
+}
 /**
- *  给视图设置圆角
+ *  给视图添加圆角
  *
  *  @param cornerRadius        圆角大小
  *  @param rectCorner          圆角的方向
  */
-- (void)SG_setCornerRadius:(CGFloat)cornerRadius rectCorner:(UIRectCorner)rectCorner {
+- (void)SG_addCornerRadius:(CGFloat)cornerRadius rectCorner:(UIRectCorner)rectCorner {
     UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:rectCorner cornerRadii:CGSizeMake(cornerRadius,cornerRadius)];
     CAShapeLayer *shapeLayer = [[CAShapeLayer alloc] init];
     shapeLayer.frame = self.bounds;
@@ -175,14 +180,20 @@ static char kSGActionHandlerTapBlockKey;
     self.layer.mask = shapeLayer;
 }
 
+/** 给视图添加边框及边框颜色 */
+- (void)SG_addBorderWidth:(CGFloat)width color:(UIColor *)color {
+    self.layer.borderWidth = width;
+    self.layer.borderColor = color.CGColor;
+}
+
 /**
- *  给视图设置阴影效果
+ *  给视图添加阴影效果
  *
  *  @param color           阴影颜色
  *  @param offset          阴影偏移量
  *  @param radius          阴影圆角
  */
-- (void)SG_setLayerShadowColor:(UIColor*)color offset:(CGSize)offset radius:(CGFloat)radius {
+- (void)SG_addLayerShadowColor:(UIColor*)color offset:(CGSize)offset radius:(CGFloat)radius {
     self.layer.shadowColor = color.CGColor;
     self.layer.shadowOffset = offset;
     self.layer.shadowRadius = radius;
