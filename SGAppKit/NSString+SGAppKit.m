@@ -38,8 +38,8 @@
  *  @param font      文字字号
  */
 - (CGFloat)SG_calculateStringWidthWithFont:(UIFont *)font {
-    NSDictionary *attributedStr = @{NSFontAttributeName : font};
-    return [self boundingRectWithSize:CGSizeMake(0, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributedStr context:nil].size.width;
+    NSDictionary *dict = @{NSFontAttributeName : font};
+    return [self boundingRectWithSize:CGSizeMake(0, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:dict context:nil].size.width;
 }
 /**
  *  根据字号大小及宽度计算出字符串的高
@@ -48,8 +48,25 @@
  *  @param width        限制的宽度
  */
 - (CGFloat)SG_calculateStringHeightWithFont:(UIFont *)font width:(CGFloat)width {
-    NSDictionary *attributedStr = @{NSFontAttributeName : font};
-    return [self boundingRectWithSize:CGSizeMake(width, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributedStr context:nil].size.height;
+    NSDictionary *dict = @{NSFontAttributeName : font};
+    return [self boundingRectWithSize:CGSizeMake(width, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:dict context:nil].size.height;
 }
+/**
+ *  根据字号大小、宽度及上下行间距计算出字符串的高
+ *
+ *  @param font         文字字号
+ *  @param width        限制的宽度
+ *  @param spacing      字符串上下间的间距
+ */
+- (CGFloat)SG_calculateStringHeightWithFont:(UIFont *)font width:(CGFloat)width spacing:(CGFloat)spacing {
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineSpacing = spacing;
+    NSDictionary *dict = @{
+        NSFontAttributeName: font,
+        NSParagraphStyleAttributeName: paragraphStyle
+    };
+    return [self boundingRectWithSize:CGSizeMake(width, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:dict context:nil].size.height;
+}
+
 
 @end

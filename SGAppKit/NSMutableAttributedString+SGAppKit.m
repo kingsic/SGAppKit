@@ -9,7 +9,7 @@
 #import "NSMutableAttributedString+SGAppKit.h"
 
 @implementation NSMutableAttributedString (SGAppKit)
-+ (NSMutableAttributedString * (^)(NSString *))SG_initWithString {
++ (NSMutableAttributedString *(^)(NSString *))SG_initWithString {
     return ^(NSString *string) {
         NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string];
         return attributedString;

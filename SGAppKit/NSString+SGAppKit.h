@@ -26,6 +26,14 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param width        限制的宽度
  */
 - (CGFloat)SG_calculateStringHeightWithFont:(UIFont *)font width:(CGFloat)width;
+/**
+ *  根据字号大小、宽度及上下行间距计算出字符串的高
+ *
+ *  @param font         文字字号
+ *  @param width        限制的宽度
+ *  @param spacing      字符串上下间的间距
+ */
+- (CGFloat)SG_calculateStringHeightWithFont:(UIFont *)font width:(CGFloat)width spacing:(CGFloat)spacing;
 
 @end
 

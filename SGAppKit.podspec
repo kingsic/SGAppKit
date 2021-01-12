@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name         = 'SGAppKit'
-    s.version      = '0.1.5'
+    s.version      = '0.1.6'
     s.summary      = 'category'
     s.homepage     = 'https://github.com/kingsic/SGAppKit'
     s.license      = 'MIT'

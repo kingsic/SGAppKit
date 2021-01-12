@@ -1,6 +1,6 @@
 //
 //  SGAppKit.h
-//  Version 0.1.5
+//  Version 0.1.6
 //  GitHub：https://github.com/kingsic/SGAppKit
 //
 //  Created by kingsic on 2019/6/1.
