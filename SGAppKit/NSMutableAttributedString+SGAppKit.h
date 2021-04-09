@@ -2,7 +2,7 @@
 //  NSMutableAttributedString+SGAppKit.h
 //  SGAppKitExample
 //
-//  Created by kingsic on 2020/9/22.
+//  Created by kingsic on 2020/6/23.
 //  Copyright © 2020 kingsic. All rights reserved.
 //
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D20D919261FF2A10029AC64 /* UIAlertController+SGAppKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20D917261FF2A10029AC64 /* UIAlertController+SGAppKit.m */; };
 		8D22340C229E200200E0204F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D22340B229E200200E0204F /* AppDelegate.m */; };
 		8D22340F229E200200E0204F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D22340E229E200200E0204F /* ViewController.m */; };
 		8D223412229E200200E0204F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D223410229E200200E0204F /* Main.storyboard */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D20D917261FF2A10029AC64 /* UIAlertController+SGAppKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+SGAppKit.m"; sourceTree = "<group>"; };
+		8D20D918261FF2A10029AC64 /* UIAlertController+SGAppKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+SGAppKit.h"; sourceTree = "<group>"; };
 		8D223407229E200200E0204F /* SGAppKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGAppKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D22340A229E200200E0204F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8D22340B229E200200E0204F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 				8D6981B724DAFAE200D9447C /* NSString+SGAppKit.m */,
 				8D76D853251CD78F00AAD123 /* NSMutableAttributedString+SGAppKit.h */,
 				8D76D854251CD78F00AAD123 /* NSMutableAttributedString+SGAppKit.m */,
+				8D20D918261FF2A10029AC64 /* UIAlertController+SGAppKit.h */,
+				8D20D917261FF2A10029AC64 /* UIAlertController+SGAppKit.m */,
 				8D6981AD24DAFAE200D9447C /* UIBarButtonItem+SGAppKit.h */,
 				8D6981A324DAFAE200D9447C /* UIBarButtonItem+SGAppKit.m */,
 				8D6981B224DAFAE200D9447C /* UIButton+SGAppKit.h */,
@@ -347,6 +352,7 @@
 				8D6981B924DAFAE200D9447C /* UIButton+SGAppKit.m in Sources */,
 				8D22340C229E200200E0204F /* AppDelegate.m in Sources */,
 				8D6981BA24DAFAE200D9447C /* UIView+SGAppKit.m in Sources */,
+				8D20D919261FF2A10029AC64 /* UIAlertController+SGAppKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

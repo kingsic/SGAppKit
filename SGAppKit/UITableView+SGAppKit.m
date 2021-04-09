@@ -2,18 +2,31 @@
 //  UITableView+SGAppKit.m
 //  SGAppKitExample
 //
-//  Created by kingsic on 2019/7/13.
-//  Copyright © 2019年 kingsic. All rights reserved.
+//  Created by kingsic on 2017/8/7.
+//  Copyright © 2017年 kingsic. All rights reserved.
 //
 
 #import "UITableView+SGAppKit.h"
 
 @implementation UITableView (SGAppKit)
-// 从 XIB 中注册 Cell
-- (void)SG_registerNib:(Class)aClass reuseIdentifier:(NSString *)identifier {
-    [self registerNib:[UINib nibWithNibName:NSStringFromClass(aClass) bundle:nil] forCellReuseIdentifier:identifier];
+// Nib Cell 注册
+- (void)SG_registerNib:(Class)aClass {
+    NSString *className = NSStringFromClass(aClass);
+    [self registerNib:[UINib nibWithNibName:className bundle:nil] forCellReuseIdentifier:className];
 }
-// 注册 Cell
+// Nib Cell 注册
+- (void)SG_registerNib:(Class)aClass reuseIdentifier:(NSString *)identifier {
+    NSString *className = NSStringFromClass(aClass);
+    [self registerNib:[UINib nibWithNibName:className bundle:nil] forCellReuseIdentifier:identifier];
+}
+
+
+// 纯代码 Cell 注册
+- (void)SG_registerClass:(Class)aClass {
+    NSString *className = NSStringFromClass(aClass);
+    [self registerClass:aClass forCellReuseIdentifier:className];
+}
+// 纯代码 Cell 注册
 - (void)SG_registerClass:(Class)aClass reuseIdentifier:(NSString *)identifier {
     [self registerClass:aClass forCellReuseIdentifier:identifier];
 }

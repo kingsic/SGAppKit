@@ -8,12 +8,12 @@
 
 Pod::Spec.new do |s|
     s.name         = 'SGAppKit'
-    s.version      = '0.1.6'
+    s.version      = '0.2.0'
     s.summary      = 'category'
     s.homepage     = 'https://github.com/kingsic/SGAppKit'
     s.license      = 'MIT'
     s.authors      = {'kingsic' => 'kingsic@126.com'}
-    s.platform     = :ios, '8.0'
+    s.platform     = :ios, '9.0'
     s.source       = {:git => 'https://github.com/kingsic/SGAppKit.git', :tag => s.version}
     s.source_files = 'SGAppKit/**/*.{h,m}'
     s.requires_arc = true

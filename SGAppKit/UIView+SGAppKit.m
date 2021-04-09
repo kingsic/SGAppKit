@@ -2,8 +2,8 @@
 //  UIView+SGAppKit.m
 //  SGAppKitExample
 //
-//  Created by kingsic on 2019/6/1.
-//  Copyright © 2019年 kingsic. All rights reserved.
+//  Created by kingsic on 2016/10/9.
+//  Copyright © 2016年 kingsic. All rights reserved.
 //
 
 #import "UIView+SGAppKit.h"

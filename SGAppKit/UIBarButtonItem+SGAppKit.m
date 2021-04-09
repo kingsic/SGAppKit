@@ -2,8 +2,8 @@
 //  UIBarButtonItem+SGAppKit.m
 //  SGAppKitExample
 //
-//  Created by kingsic on 2019/6/1.
-//  Copyright © 2019年 kingsic. All rights reserved.
+//  Created by kingsic on 2017/8/7.
+//  Copyright © 2017年 kingsic. All rights reserved.
 //
 
 #import "UIBarButtonItem+SGAppKit.h"
