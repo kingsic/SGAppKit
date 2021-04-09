@@ -10,7 +10,7 @@
 #import "NSMutableAttributedString+SGAppKit.h"
 #import "NSString+SGAppKit.h"
 
-#import "UIAlertController+SGAppKit"
+#import "UIAlertController+SGAppKit.h"
 #import "UIBarButtonItem+SGAppKit.h"
 #import "UIButton+SGAppKit.h"
 #import "UIColor+SGAppKit.h"
